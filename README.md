@@ -1,4 +1,4 @@
-# Codex Note - WeChat AI Assistant
+# Note - WeChat AI Assistant
 
 本项目实现一个简易的微信 "随手记" 助手，自动将微信消息同步到飞书文档，主要功能如下：
 
