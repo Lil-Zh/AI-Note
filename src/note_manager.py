@@ -21,9 +21,27 @@ class NoteManager:
         text = info.get("text", "")
         if info.get("type") == "Sharing" or re.search(r"https?://", text):
             return "link"
-        if "#TODO" in text:
+
+        todo_keywords = [
+            "todo",
+            "待办",
+            "记得",
+            "需要",
+            "计划",
+            "任务",
+        ]
+        idea_keywords = [
+            "灵感",
+            "idea",
+            "想法",
+            "点子",
+            "创意",
+        ]
+
+        ltext = text.lower()
+        if any(k in ltext for k in todo_keywords):
             return "todo"
-        if "灵感" in text or "#idea" in text:
+        if any(k in ltext for k in idea_keywords):
             return "idea"
         if info.get("type") == "Picture":
             return "image"
